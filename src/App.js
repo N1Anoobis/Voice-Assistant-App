@@ -36,28 +36,25 @@ const App = () => {
 
 
   function digital_root(n) {
-    let reduced = []
-    let converted = []
-    let array = n.toString()
-    console.log(array, 'toString')
-    array = [...array]
-    console.log(array, 'split')
-    converted = array.map(n => n * 1)
-    console.log(converted, 'Number')
-    reduced = converted.reduce(
+    let reduced = [];
+    let other = [];
+    let result = n.toString();
+    result = [...result];
+    other = result.map(n => n * 1);
+    reduced = other.reduce(
       (a, c) => a + c,
       0
     );
-    console.log(reduced, 'reduce')
     if (reduced > 9) {
-      digital_root(reduced)
+      digital_root(reduced);
     }
-    if (reduced < 9) {
+    if (reduced <= 9) {
+        console.log(reduced, 'returned value')
       return reduced
     }
-  }
+  };
 
-  digital_root(456)
+  digital_root(9)
 
   return (
     <div>
