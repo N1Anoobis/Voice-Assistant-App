@@ -45,8 +45,9 @@ const App = () => {
       (a, c) => a + c,
       0
     );
+    
     if (reduced > 9) {
-      digital_root(reduced);
+     return digital_root(reduced);
     }
     if (reduced <= 9) {
         console.log(reduced, 'returned value')
@@ -54,7 +55,7 @@ const App = () => {
     }
   };
 
-  digital_root(9)
+  digital_root(54354344339)
 
   return (
     <div>
