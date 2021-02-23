@@ -1,22 +1,24 @@
 <template>
   <li>
-    <div>
+    <BaseCard>
       <header>
         <h3>{{ data.title }}</h3>
         <button>Delete</button>
       </header>
-    </div>
-    <p>{{ data.description }}</p>
-    <nav>
-      <a :href="data.link">View resource</a>
-    </nav>
+
+      <p>{{ data.description }}</p>
+      <nav>
+        <a :href="data.link">View resource</a>
+      </nav>
+    </BaseCard>
   </li>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import BaseCard from "./UI/BaseCard.vue";
 @Component({
-  components: {},
+  components: { BaseCard },
 })
 export default class ResourceItem extends Vue {
   @Prop() data: object;
