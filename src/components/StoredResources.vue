@@ -23,6 +23,7 @@ export default class StoredRecorces extends Vue {
 li {
   margin: auto;
   max-width: 40rem;
+  list-style: none;
 }
 
 header {
