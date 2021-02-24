@@ -1,12 +1,18 @@
 <template>
   <section class="section">
-    <BaseButton @click.native="setSelectedTab('stored-resources')"
+    <BaseButton
+      @click.native="setSelectedTab('stored-resources')"
+      :mode="storedResButton"
       >Stored Resources</BaseButton
     >
-    <BaseButton @click.native="setSelectedTab('add-resource')"
+    <BaseButton
+      @click.native="setSelectedTab('add-resource')"
+      :mode="addResButton"
       >AddResources</BaseButton
     >
-    <component :is="selectedTab"></component>
+    <keep-alive>
+      <component :is="selectedTab"></component>
+    </keep-alive>
   </section>
 </template>
 
@@ -42,11 +48,31 @@ export default class TheResources extends Vue {
   ];
 
   @Provide("resources") resources: object[] = this.storedResources;
+  @Provide("addNewRes") addNewRes: Function = this.addResource;
 
   selectedTab = "stored-resources";
 
   setSelectedTab(tab) {
     this.selectedTab = tab;
+  }
+
+  get storedResButton() {
+    return this.selectedTab === "stored-resources" ? null : "flat";
+  }
+
+  get addResButton() {
+    return this.selectedTab === "add-resource" ? null : "flat";
+  }
+
+  addResource(title, description, url) {
+    const newResources = {
+      id: new Date().toISOString(),
+      title,
+      description,
+      url,
+    };
+    this.storedResources.unshift(newResources);
+    this.selectedTab = "stored-resources";
   }
 }
 </script>

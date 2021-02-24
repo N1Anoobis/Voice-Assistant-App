@@ -1,7 +1,6 @@
 <template>
   <div>
     <TheHeader title="Vue Pratcise App" />
-    <!-- <StoredRecorces :resources="storedResources" /> -->
     <TheResourses />
   </div>
 </template>
