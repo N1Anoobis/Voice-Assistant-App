@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Inject, Vue } from "vue-property-decorator";
 import ResourceItem from "./ResourceItem.vue";
 @Component({
   components: {
@@ -15,7 +15,7 @@ import ResourceItem from "./ResourceItem.vue";
   },
 })
 export default class StoredRecorces extends Vue {
-  @Prop() resources: object;
+  @Inject() resources: object;
 }
 </script>
 

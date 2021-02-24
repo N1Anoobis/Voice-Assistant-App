@@ -1,34 +1,20 @@
 <template>
   <div>
     <TheHeader title="Vue Pratcise App" />
-    <StoredRecorces :resources="storedResources" />
+    <!-- <StoredRecorces :resources="storedResources" /> -->
+    <TheResourses />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import StoredRecorces from "./components/StoredResources.vue";
+import TheResourses from "./components/TheResource.vue";
 import TheHeader from "./components/layouts/TheHeader.vue";
 
 @Component({
-  components: { StoredRecorces, TheHeader },
+  components: { TheResourses, TheHeader },
 })
-export default class App extends Vue {
-  storedResources: Array<object> = [
-    {
-      id: "official-guide",
-      title: "Official Guide",
-      description: "The official Vue.js documentacion",
-      link: "https://vuejs.org",
-    },
-    {
-      id: "google",
-      title: "Google",
-      description: "The official Google",
-      link: "https://google.com",
-    },
-  ];
-}
+export default class App extends Vue {}
 </script>
 
 <style>

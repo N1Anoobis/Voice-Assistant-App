@@ -3,7 +3,7 @@
     <BaseCard>
       <header>
         <h3>{{ data.title }}</h3>
-        <button>Delete</button>
+        <BaseButton mode="flat">Delete</BaseButton>
       </header>
 
       <p>{{ data.description }}</p>
@@ -17,8 +17,10 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import BaseCard from "./UI/BaseCard.vue";
+import BaseButton from "./UI/BaseButton.vue";
+
 @Component({
-  components: { BaseCard },
+  components: { BaseCard, BaseButton },
 })
 export default class ResourceItem extends Vue {
   @Prop() data: object;

@@ -1,6 +1,6 @@
 <template>
   <div>
-<slot></slot>
+    <slot></slot>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import { Component, Vue } from "vue-property-decorator";
 // import ResourceItem from "./ResourceItem.vue";
 @Component
 export default class BaseCard extends Vue {
-//   @Prop() resources: object;
+  //   @Prop() resources: object;
 }
 </script>
 
