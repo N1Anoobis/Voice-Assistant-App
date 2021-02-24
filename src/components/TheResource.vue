@@ -49,6 +49,7 @@ export default class TheResources extends Vue {
 
   @Provide("resources") resources: object[] = this.storedResources;
   @Provide("addNewRes") addNewRes: Function = this.addResource;
+  @Provide("removeRes") removeRes: Function = this.removeResources;
 
   selectedTab = "stored-resources";
 
@@ -73,6 +74,11 @@ export default class TheResources extends Vue {
     };
     this.storedResources.unshift(newResources);
     this.selectedTab = "stored-resources";
+  }
+
+  removeResources(resId) {
+    const resIndex = this.storedResources.findIndex((res) => res.id === resId);
+    this.storedResources.splice(resIndex, 1);
   }
 }
 </script>

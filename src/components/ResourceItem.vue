@@ -3,7 +3,9 @@
     <BaseCard>
       <header>
         <h3>{{ data.title }}</h3>
-        <BaseButton mode="flat">Delete</BaseButton>
+        <BaseButton mode="flat" @click.native="removeRes(data.id)"
+          >Delete</BaseButton
+        >
       </header>
 
       <p>{{ data.description }}</p>
@@ -15,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Inject } from "vue-property-decorator";
 import BaseCard from "./UI/BaseCard.vue";
 import BaseButton from "./UI/BaseButton.vue";
 
@@ -24,6 +26,8 @@ import BaseButton from "./UI/BaseButton.vue";
 })
 export default class ResourceItem extends Vue {
   @Prop() data: object;
+  @Prop() id: string;
+  @Inject() removeRes: Function;
 }
 </script>
 
