@@ -66,12 +66,12 @@ export default class TheResources extends Vue {
     return this.selectedTab === "add-resource" ? null : "flat";
   }
 
-  addResource(title, description, url) {
+  addResource(title, description, link) {
     const newResources: ResourceItem = {
       id: new Date().toISOString(),
       title,
       description,
-      url,
+      link,
     };
     this.storedResources.unshift(newResources);
     this.selectedTab = "stored-resources";
