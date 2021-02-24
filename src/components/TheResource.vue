@@ -22,6 +22,7 @@ import BaseCard from "./UI/BaseCard.vue";
 import BaseButton from "./UI/BaseButton.vue";
 import StoredResources from "./StoredResources.vue";
 import AddResource from "./AddRecource.vue";
+import ResourceItem from "../interfaces";
 
 @Component({
   components: {
@@ -32,7 +33,7 @@ import AddResource from "./AddRecource.vue";
   },
 })
 export default class TheResources extends Vue {
-  storedResources: Array<object> = [
+  storedResources: Array<ResourceItem> = [
     {
       id: "official-guide",
       title: "Official Guide",
@@ -66,7 +67,7 @@ export default class TheResources extends Vue {
   }
 
   addResource(title, description, url) {
-    const newResources = {
+    const newResources: ResourceItem = {
       id: new Date().toISOString(),
       title,
       description,
