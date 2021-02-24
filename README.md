@@ -1,4 +1,4 @@
-# https://60363bd973a707e7cdcea62a--eloquent-ptolemy-c69c37.netlify.app/#/
+https://60363bd973a707e7cdcea62a--eloquent-ptolemy-c69c37.netlify.app/#/
 
 ## Project setup
 ```
